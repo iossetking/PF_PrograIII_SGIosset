@@ -1,5 +1,3 @@
-from fcntl import FASYNC
-
 import tensorflow as tf
 import numpy as np
 
@@ -14,6 +12,8 @@ def train_model():
     optimizer=tf.keras.optimizers.Adam(learning_rate=0.1),
     loss='mean_squared_error')
 
+  print('Training model...')
   history = model.fit(celsius, fahrenheit, epochs=500, verbose=False)
+  print('Model trained')
 
   return model, history
